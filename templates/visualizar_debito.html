@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Débito</title>
+</head>
+<body>
+    <h1>Visualizar Débito de {{ nome_cliente }}</h1>
+    {% if debitos %}
+        <h2>Débitos:</h2>
+        <ul>
+            {% for debito in debitos %}
+                <li>R$ {{ debito[0] }}</li>
+            {% endfor %}
+        </ul>
+        <p>Total: R$ {{ total_debito }}</p>
+    {% else %}
+        <p>{{ mensagem }}</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
+
+

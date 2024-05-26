@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem vindo ao consulta clientes!</h1>
+        <div class="buttons">
+            <a href="{{ url_for('cadastrar_cliente') }}">Cadastrar Cliente</a>
+            <a href="{{ url_for('incluir_debito_form') }}">Incluir Débito</a>
+            <a href="{{ url_for('consultar_debito') }}">Consultar Débito</a>
+            <a href="{{ url_for('consultar_cliente_form') }}">Consultar Clientes</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function validarFormulario() {
+            var nome = document.getElementById('nome_cliente').value;
+            var telefone = document.getElementById('telefone').value;
+
+            if (nome.trim() === '') {
+                alert('Por favor, preencha o campo Nome.');
+                return false;
+            }
+            if (telefone.trim() === '') {
+                alert('Por favor, preencha o campo Telefone.');
+                return false;
+            }
+            return true;
+        }
+
+        function exibirPopup() {
+            alert('Cliente cadastrado com sucesso!');
+        }
+    </script>
+</head>
+<body>
+    <h1 align="center">Cadastro de Cliente</h1>
+    <form action="{{ url_for('cadastrar_cliente') }}" method="post" align="center" onsubmit="return validarFormulario() && exibirPopup();">
+        <label for="nome_cliente">Nome:</label><br>
+        <input type="text" id="nome_cliente" name="nome_cliente"><br><br>
+        <label for="telefone">Telefone:</label><br>
+        <input type="text" id="telefone" name="telefone"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+        <input type="hidden" name="acao" value="incluir">
+        <input type="submit" value="Cadastrar">
+    </form>
+    <p align="center"><a href="{{ url_for('index') }}" class="button">Voltar</a></p>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Débito</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 align="center">Consulta de Débito</h1>
+    <form action="{{ url_for('consultar_debito') }}" method="post" align="center">
+        <label for="nome_cliente">Nome do Cliente:</label><br>
+        <input type="text" id="nome_cliente" name="nome_cliente"><br><br>
+        <input type="submit" value="Consultar">
+    </form>
+    <p align="center"><a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>
+
